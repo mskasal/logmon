@@ -1,0 +1,13 @@
+{
+    "projects": [{
+        "name": "LogMon Log Monitoring Tool",
+        "codeName": "logMon",
+        "logPath": "/var/www/logMon/log.txt",
+        "updateDate": 1378125312
+    }, {
+        "name": "a fancy project",
+        "codeName": "fancyOne",
+        "logPath": "/var/app/fancy/log.txt",
+        "updateDate": 1378125312
+    }]
+}

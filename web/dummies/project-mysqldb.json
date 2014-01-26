@@ -1,0 +1,14 @@
+{
+    "name": "The fancy Tool",
+    "codeName": "theFancyOne",
+    "logConfig": {
+        "storageType": "mysql",
+        "db.host": "127.0.0.1",
+        "db.port": "3306",
+        "db.username": "sysadmin_john",
+        "db.password": "super plan text password",
+        "db.databaseName": "fancy",
+        "db.collectionName": "logs"
+    },
+    "updateDate": 1378125312
+}

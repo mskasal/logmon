@@ -1,0 +1,18 @@
+{
+    "entries": [{
+        "project": "project's code name",
+        "date": 1378125312,
+        "type": "info",
+        "text": "the cache file has just been saved."
+    }, {
+        "project": "project's code name",
+        "date": 1378126312,
+        "type": "error",
+        "text": "an error occured during the process"
+    }, {
+        "project": "project's code name",
+        "date": 1378127312,
+        "type": "debug",
+        "text": "looking for the required parameters"
+    }]
+}
