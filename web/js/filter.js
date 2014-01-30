@@ -14,7 +14,7 @@ var Filter = function() {
             after: null,
             before: null,
             contains: null,
-            limit: null
+            limit: 25
         }
     };
     this.init();
@@ -46,6 +46,9 @@ Filter.prototype.bind = function() {
         that.onChange();
     });
 
+    $('.project-selection').on('show.bs.dropdown', function() {
+
+    });
     //TODO bindlar yapılcak auto refresh özelliği eklenecek falan filan
 };
 

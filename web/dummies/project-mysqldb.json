@@ -1,14 +1,32 @@
 {
-    "name": "The fancy Tool",
-    "codeName": "theFancyOne",
+    "name": "applog 1",
+    "codeName": "log1",
     "logConfig": {
         "storageType": "mysql",
-        "db.host": "127.0.0.1",
-        "db.port": "3306",
-        "db.username": "sysadmin_john",
-        "db.password": "super plan text password",
-        "db.databaseName": "fancy",
-        "db.collectionName": "logs"
-    },
-    "updateDate": 1378125312
+        "host": "localhost",
+        "password": "root",
+        "username": "root",
+        "port": "3306",
+        "databaseName": "test",
+        "collectionName": "applog1",
+        "charset": "utf8",
+        "fieldMapper": {
+            "date": {
+                "fieldName": "crtDate",
+                "regex": "(.*)"
+            },
+            "unique": {
+                "fieldName": "id",
+                "regex": "(.*)"
+            },
+            "message": {
+                "fieldName": "text",
+                "regex": "(.*)"
+            },
+            "level": {
+                "fieldName": "level",
+                "regex": "(.*)"
+            }
+        }
+    }
 }

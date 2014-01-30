@@ -25,6 +25,8 @@ __extends(LogmonAdapter, Adapter);
 LogmonAdapter.prototype.init = function() {
     "use strict";
     var that = this;
+
+    this.datePicker();
     this.fetch(that.query).then(function() {
         that.render();
     });
@@ -64,4 +66,31 @@ LogmonAdapter.prototype.render = function() {
             container.prepend(renderedList);
         }
     }
+};
+
+LogmonAdapter.prototype.datePicker = function() {
+    var that = this;
+    $('.filtered-date').daterangepicker({
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+                'Last 7 Days': [moment().subtract('days', 6), moment()],
+                'Last 15 Days': [moment().subtract('days', 14), moment()],
+            },
+            startDate: moment().subtract('days', 29),
+            endDate: moment(),
+            dateLimit: {
+                d: 15
+            },
+            showDropdowns: true,
+            opens: 'left'
+        },
+        function(start, end) {
+            $('.filtered-date').val(start.format('MM/DD/YY') + ' - ' + end.format('MM/DD/YY'));
+            that.filterStartDate = start.format('X');
+            that.filterEndDate = end.format('X');
+            that.updateQuery();
+        }
+    );
+
 };

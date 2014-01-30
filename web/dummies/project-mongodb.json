@@ -1,14 +1,33 @@
 {
-    "name": "The fancy Tool",
-    "codeName": "theFancyOne",
+    "id": "3412g3b0hg4q48cusrkravuqe503g1124",
+    "name": "fineapplog 2",
+    "codeName": "finelog2",
     "logConfig": {
         "storageType": "mongodb",
-        "db.host": "127.0.0.1",
-        "db.port": "27017",
-        "db.username": "sysadmin_john",
-        "db.password": "super plan text password",
-        "db.databaseName": "fancy",
-        "db.collectionName": "logs"
-    },
-    "updateDate": 1378125312
+        "host": "localhost",
+        "port": "27017",
+        "auth": "1",
+        "password": "super",
+        "username": "ninjaaaaa",
+        "databaseName": "logmon",
+        "collectionName": "test",
+        "fieldMapper": {
+            "date": {
+                "fieldName": "at",
+                "regex": "(.*)"
+            },
+            "unique": {
+                "fieldName": "id",
+                "regex": "(.*)"
+            },
+            "message": {
+                "fieldName": "text",
+                "regex": "(.*)"
+            },
+            "level": {
+                "fieldName": "level",
+                "regex": "(.*)"
+            }
+        }
+    }
 }

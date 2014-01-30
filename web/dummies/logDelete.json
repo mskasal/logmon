@@ -1,0 +1,13 @@
+{
+    "status": {
+        "code": 20,
+        "message": "Log has just been deleted successfully."
+    },
+    "data": {
+        "log": {
+            "id": "2412g3b0hg4q48cusrkravuqe503g1123",
+            "name": "applog 1",
+            "codeName": "log1"
+        }
+    }
+}

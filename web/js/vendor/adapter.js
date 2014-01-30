@@ -10,10 +10,12 @@ Adapter.prototype.fetch = function() {
     "use strict";
     var that = this;
 
-    this.fetchProcess = tools.Ajax(this.query.type, this.query.url, this.query.data)
+    this.fetchProcess = tools.Ajax(this.query.type, this.query.url, this.query.data, "error")
         .done(function(response) {
-            that.data = response;
-        }).fail(function(jqXHR, textStatus, errorThrown) {});
+            that.data = response.data;
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            alertify.error(textStatus);
+        });
 
     return this.fetchProcess;
 };
@@ -24,11 +26,16 @@ Adapter.prototype.render = function(container) {
 
 Adapter.prototype.refresh = function() {
     "use strict";
+    var that = this;
 
     this.fetchProcess.abort();
 
-    this.fetch(this.query);
+    this.fetch(this.query)
+        .done(function() {
+            that.render();
+        });
 };
+
 
 
 Adapter.prototype.onBeforeRender = function(callback) {

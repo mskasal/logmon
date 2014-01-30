@@ -2,18 +2,42 @@ var Tools = function() {
     "use strict";
 };
 
-Tools.prototype.Ajax = function(type, url, data) {
+Tools.prototype.Ajax = function(type, url, data, notify) {
     "use strict";
+    var that = this;
+
     return $.ajax({
         type: type,
         url: url,
         dataType: 'json',
         data: data
+    }).always(function(response) {
+        that.notifyHandler(response.status, notify);
     });
-
 };
 
+Tools.prototype.notifyHandler = function(status, notify) {
+    "use strict";
+    var that = this;
 
+    var statusCode = status.code,
+        statusMessage = status.message;
+    if (notify) {
+        if (statusCode === 30 && notify === "error") { //means error
+            alertifiy.error(statusMessage);
+        } else
+        if (statusCode === 20 && notify === "success") { //means success
+            alertify.success(statusMessage);
+        }
+    } else if (notify === "both") {
+        if (statusCode === 30) { //means error
+            alertifiy.error(statusMessage);
+        } else
+        if (statusCode === 20) { //means success
+            alertify.success(statusMessage);
+        }
+    }
+};
 
 Tools.prototype.ColorLuminance = function(hex, lum) {
     "use strict";

@@ -1,13 +1,19 @@
 {
-    "projects": [{
-        "name": "LogMon Log Monitoring Tool",
-        "codeName": "logMon",
-        "logPath": "/var/www/logMon/log.txt",
-        "updateDate": 1378125312
-    }, {
-        "name": "a fancy project",
-        "codeName": "fancyOne",
-        "logPath": "/var/app/fancy/log.txt",
-        "updateDate": 1378125312
-    }]
+    "status": {
+        "code": 20,
+        "message": "Log has just been registered successfully."
+    },
+    "data": {
+        "logs": [{
+            "id": "988ab231241208832e124",
+            "name": "app log 1",
+            "codeName": "log1",
+            "logConfig": "..."
+        }, {
+            "id": "128ab2312412088fec184",
+            "name": "app log 2",
+            "codeName": "log2",
+            "logConfig": "..."
+        }]
+    }
 }
